@@ -24,19 +24,23 @@ useEffect(() => {
 
   return (
     <div>
-      {/* <Header/> */}
-      <Link to ='/' className='back-link'>Back</Link>
-      <div className='header'>Beauty</div>
-      <div className="product-grid">
-        {products.map((product, index) => (
-          <ProductCard
-            key={index}
-            id={product.id}
-            picture_url={product.picture_url}
-            name={`${product.name} ${index + 1}`}
-            price={product.bulb_price}
-          />
-        ))}
+      <Link to="/">
+        <div className="back-link">Back</div>
+      </Link>
+
+      <div className="category-page">
+        <h2 className="category-header">Beauty</h2>
+        <div className="product-grid">
+          {products.map((product, index) => (
+            <ProductCard
+              key={index}
+              id={product.id}
+              picture_url={product.picture_url}
+              name={`${product.name} ${index + 1}`}
+              price={product.bulb_price}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

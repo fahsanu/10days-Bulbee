@@ -10,12 +10,49 @@ const Summary = () => {
   const [subtotal, setSubtotal] = useState(0);
   const [discountapplied, setDiscountapplied] = useState(false)
   const sid = "6666666666";
-  // const id = "46ca6f33-cd6d-44a7-8078-0bd4e33e420d";
+
 
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const id = params.get("id");
   const count = parseInt(params.get("count") || "0", 10); // Parse the count from URL or default to 0.
+
+    //get user data ------------------------------------------
+
+    const [user, setUser] = useState<{
+      first_name: string;
+      last_name: string;
+      sid: string;
+      phone_number: string;
+      address: string;
+      postal_code: string;
+    }>({
+      first_name: "",
+      last_name: "",
+      sid: "",
+      phone_number: "",
+      address: "",
+      postal_code: "",
+    });
+  
+    try {
+      const token = window.localStorage.getItem("access_token");
+      fetch(`http://127.0.0.1:4000/auth/get_user`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((res) => res.json())
+        // .then((data) => console.log(data.result))
+        .then((data) => setUser(data.result))
+        .catch((error) => console.log("Getting error", error));
+      // console.log(user)
+    } catch (error) {
+      console.error(error);
+      // Handle error state here
+    }
 
   //link to confirmation page and update bulbb ------------------------------------------
   const navigate = useNavigate();
@@ -26,7 +63,7 @@ const Summary = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ total, sid }),
+        body: JSON.stringify({ total, sid: user.sid }),
       });
 
       const data = await response.json();
@@ -45,6 +82,7 @@ const Summary = () => {
         const data2 = await response2.json();
         if (data2.status) {
           navigate(`/confirm?id=${id}&count=${count}&total=${total}`);
+          window.location.reload();
         } else {
           console.log("Error occur");
         }
@@ -69,12 +107,11 @@ const Summary = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ code, sid }),
+        body: JSON.stringify({ code, sid: user.sid }),
       });
 
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
         console.log(data.amount);
         setDiscount(data.amount);
         setDiscountapplied(true)
@@ -127,43 +164,6 @@ const Summary = () => {
       isRun = true;
     };
   }, []);
-
-  //get user data ------------------------------------------
-
-  const [user, setUser] = useState<{
-    first_name: string;
-    last_name: string;
-    sid: string;
-    phone_number: string;
-    address: string;
-    postal_code: string;
-  }>({
-    first_name: "",
-    last_name: "",
-    sid: "",
-    phone_number: "",
-    address: "",
-    postal_code: "",
-  });
-
-  try {
-    const token = window.localStorage.getItem("access_token");
-    fetch(`http://127.0.0.1:4000/auth/get_user`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((res) => res.json())
-      // .then((data) => console.log(data.result))
-      .then((data) => setUser(data.result))
-      .catch((error) => console.log("Getting error", error));
-    // console.log(user)
-  } catch (error) {
-    console.error(error);
-    // Handle error state here
-  }
 
   //set total cost ------------------------------------------
   useEffect(() => {
@@ -258,7 +258,7 @@ const Summary = () => {
         <button className="confirm-button" onClick={handleConfirmClick}>
           Confirm
         </button>
-        <Link to="/description" className="link-container">
+        <Link to="/" className="link-container">
           <div className="cancel-link">Cancel Order</div>
         </Link>
       </div>

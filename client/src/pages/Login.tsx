@@ -77,7 +77,9 @@ function Login() {
   };
   return (
     <div className="login-page">
-      <Link to='/' className='back'>Back Home</Link>
+      <Link to="/" className="back-link">
+        Back
+      </Link>
       <div className="bulbee">Bulbee</div>
       <div className="auth-title">Sign in</div>
       <form onSubmit={handleSubmit}>

@@ -4,7 +4,7 @@ import { verifyJWT, get_bulb, get_user ,get_all_user, register, login, logout } 
 
 route.get('/get_bulb', verifyJWT, async (req, res) => {
     try {
-
+        // console.log('/get_bulb')
         const foundBulb = await get_bulb(req);
         return res.json(foundBulb);
     } catch (error) {

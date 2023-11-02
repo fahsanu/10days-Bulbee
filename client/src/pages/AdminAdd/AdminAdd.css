@@ -1,143 +1,151 @@
 @media (max-width: 375px) {
-    body {
-        font-family: Poppins;
-        background-color: #FFFDFD;
-    }
+  body {
+      font-family: Poppins;
+      background-color: #FFFDFD;
+  }
 }
 * {
-    font-family: Poppins;
+  font-family: Poppins;
+}
+
+.admin-page {
+margin-left: 20px;
 }
 
 .admin-title {
-    color: #1A1B25;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    display: flex;
+  color: #1A1B25;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  display: flex;
 }
 
 .product-title {
-    color: #1A1B25;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 600;
-    display: flex;
+  color: #1A1B25;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  display: flex;
 }
 
 .name-input {
-    width: 338px;
-    height: 30px;
-    flex-shrink: 0;
-    border-radius: 6px;
-    border: 1px solid #1A1B25;
-    background: #FFFDFD;
-    font-weight: 600;
-    display: flex;
+  width: 338px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  border: 1px solid #1A1B25;
+  background: #FFFDFD;
+  font-weight: 600;
+  display: flex;
 }
 
 .description-input {
-    width: 338px;
-    height: 134px;
-    flex-shrink: 0;
-    border-radius: 6px;
-    border: 1px solid #1A1B25;
-    background: #FFFDFD;
-    display: flex;
-    font-weight: 600;
+  width: 338px;
+  height: 134px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  border: 1px solid #1A1B25;
+  background: #FFFDFD;
+  display: flex;
+  font-weight: 600;
 }
 
 .category-dropdown {
-    color: #525252;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    display: flex;
+  color: #525252;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  display: flex;
 
-    width: 252px;
-    height: 30px;
-    flex-shrink: 0;
+  width: 252px;
+  height: 30px;
+  flex-shrink: 0;
 
-    border-radius: 6px;
-    border: 1px solid #1A1B25;
-    background: #FFFDFD;
+  border-radius: 6px;
+  border: 1px solid #1A1B25;
+  background: #FFFDFD;
 }
 
 .category-option {
-    color: #525252;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+  color: #525252;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .product-title-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .product-title {
-    flex: 1;
-    text-align: center; /* You can adjust the text alignment as needed */
-  }
-  
-  .left {
-    text-align: left;
-  }
-  
-  .right {
-    text-align: right;
-  }
+  display: flex;
+  justify-content: space-between;
+}
 
-  .input-container {
-    display: flex;
-    justify-content: space-between;
-    width: 130px;
-    height: 30px;
-    
-  }
-  
-  .two-input {
-    flex: 1;
-    margin: 5px; /* Add margin for spacing */
-    
-    flex-shrink: 0;
-    border-radius: 6px;
-    border: 1px solid #1A1B25;
-    background: #FFFDFD;
-    font-weight: 600;
+.product-title {
+  flex: 1;
+  text-align: center; /* You can adjust the text alignment as needed */
+  margin: 5px 0 0 0;
+}
 
-  }
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+  margin-left:-28px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  width: 130px;
+  height: 30px;
   
-  .left2 {
-    margin-right: 5px; /* Adjust margin for spacing */
-  }
+}
+
+.two-input {
+  flex: 1;
+  margin: 5px;
   
-  .right2 {
-    margin-left: 0px; /* Adjust margin for spacing */
-  }
+  flex-shrink: 0;
+  border-radius: 6px;
+  border: 1px solid #1A1B25;
+  background: #FFFDFD;
+  font-weight: 600;
+
+}
+
+.left2 {
+  margin-right: 10px; /* Adjust margin for spacing */
+  margin-left: 0;
+}
+
+.right2 {
+  margin-left: 0px; /* Adjust margin for spacing */
+}
 
 .choose-file {
-    display: flex;
-    color: #1A1B25;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 550;
+  display: flex;
+  color: #1A1B25;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 550;
+  margin-bottom: 20px;
 }
 
 .add-button {
-    width: 353px;
-    height: 50px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    background: #392061;
+  width: 344px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #392061;
 
-    border: none;
-    padding: 0;
-    margin: 0;
-    font-family: inherit; 
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff; 
-    text-align: center; 
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit; 
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff; 
+  text-align: center; 
 }

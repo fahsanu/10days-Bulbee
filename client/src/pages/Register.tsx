@@ -94,7 +94,9 @@ function Register() {
 
   return (
     <div className="register-page">
-      <Link to='/' className='back'>Back Home</Link>
+      <Link to="/" className="back-link">
+        Back
+      </Link>
       <div className="bulbee">Bulbee</div>
       <div className="auth-title">Create an Account</div>
       <form onSubmit={handleSubmit}>

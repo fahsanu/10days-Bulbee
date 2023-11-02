@@ -7,18 +7,18 @@ interface Props {
   imageSrc: string;
 }
 
-const Category = ({category, items, imageSrc}: Props) => {
+const Category = ({ category, items, imageSrc }: Props) => {
   return (
     <div className="category-box">
       <div className="category-img">
         <img src={imageSrc} alt={category} />
-      </div>
-      <div className="text-area">
-        <div className="category-name">
-          <p>{category}</p>
-        </div>
-        <div className="item-value">
-          <p>{items} items</p>
+        <div className="text-area">
+          <div className="category-name">
+            <p>{category}</p>
+          </div>
+          <div className="item-value">
+            <p>{items} items</p>
+          </div>
         </div>
       </div>
     </div>

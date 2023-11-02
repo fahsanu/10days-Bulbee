@@ -3,12 +3,12 @@
     height: 750px;
 }
 
-.back {
+.back-link {
     color: var(--white);
     font-size: 16px;
     font-weight: 500;
     text-decoration-line: underline;   
-    padding-top: 20px;
+    margin: 20px;
 }
 
 .register-page {
