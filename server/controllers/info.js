@@ -37,13 +37,13 @@ export async function discount_code(req) {
         const ref = { sid: req.sid }
 
         const existed = await col.findOne({ sid: req.sid }, { projection: {_id: 0}})
-        // console.log('existed', existed)
-        // console.log('discount array', existed.discount)
+        console.log('existed', existed)
+        console.log('discount array', existed.discount)
 
         for (const data of existed.discount) {
             if (data.code === req.code) {
                 const _out = { "amount": data.amount}
-                // console.log('out', _out)
+                console.log('out', _out)
                 const remove = await col.updateOne(ref, {$pull: {discount: data}})
                 if (remove.modifiedCount === 1) {
                     console.log('Discounted Succesfully')
@@ -52,10 +52,11 @@ export async function discount_code(req) {
                 }
                 return _out
             }
+            return { "amount": 0}
         }
         console.log('Discount doesnt exist')
         
-        return 0
+        return { "amount": 0}
     } catch(error) {
         return { status: false, result: error}
     }

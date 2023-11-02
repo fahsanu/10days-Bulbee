@@ -25,8 +25,8 @@ route.post('/insert', async (req, res) => {
 route.post('/submit', async (req, res) => {
     try {
         const _out = await discount_code(req.body)
-        // console.log(req.body)
-        // console.log('out', _out)
+        console.log(req.body)
+        console.log('out', _out)
 
         return res.json(_out)
     } catch (error) {

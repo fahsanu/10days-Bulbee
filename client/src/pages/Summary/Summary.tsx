@@ -9,7 +9,7 @@ const Summary = () => {
   const [total, setTotal] = useState(0);
   const [subtotal, setSubtotal] = useState(0);
   const [discountapplied, setDiscountapplied] = useState(false)
-  const sid = "6438888821";
+  const sid = "6666666666";
   // const id = "46ca6f33-cd6d-44a7-8078-0bd4e33e420d";
 
   const location = useLocation();
